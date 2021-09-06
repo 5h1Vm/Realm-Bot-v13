@@ -24,7 +24,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var discord_js_1 = __importStar(require("discord.js"));
 var dotenv_1 = __importDefault(require("dotenv"));
-var keepAlive = require("./server");
+console.clear();
+// const keepAlive = require("./server")
 dotenv_1.default.config();
 var client = new discord_js_1.default.Client({
     intents: [
@@ -34,7 +35,7 @@ var client = new discord_js_1.default.Client({
 });
 client.on('ready', function () {
     var _a;
-    console.log("The code is running in " + ((_a = client.user) === null || _a === void 0 ? void 0 : _a.tag));
+    console.log("The code is running in ||" + ((_a = client.user) === null || _a === void 0 ? void 0 : _a.tag) + "||");
 });
 client.on('messageCreate', function (message) {
     if (message.content === 'ping') {
@@ -43,5 +44,5 @@ client.on('messageCreate', function (message) {
         });
     }
 });
-keepAlive();
+// keepAlive()
 client.login(process.env.TOKEN);
